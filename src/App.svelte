@@ -1,6 +1,6 @@
 <script>
     let value1 = 0;
-    let selectedAnswer = ""; // Store the selected answer
+    let selectedAnswer = ""; 
 
     function checkGuess1() {
         const resultBox = document.getElementById('result-1');
@@ -22,7 +22,7 @@
     }
 
     function checkAnswer(answer) {
-        selectedAnswer = answer; // Store the selected answer
+        selectedAnswer = answer; 
     }
 </script>
 
@@ -41,7 +41,7 @@
         on:keyup={checkGuess1}
         bind:value={value1}
     />
-    <label for="slider"> {value1} Mio </label>
+    <label for="slider">{value1} Mio.</label>
 
     <div class="pictograms">
         {#each Array(Math.floor(value1)) as _}
@@ -49,31 +49,27 @@
         {/each}
     </div>
 
-    
-
-    <p style="font-size: 12px; margin-top: 12px; "> Ein Auto = 1 Millionen PKW </p>
+    <p style="font-size: 13px; margin-top: 12px;">Ein Auto = 1 Millionen PKW</p>
 </div>
 
 <div id="result-1" class="result-box-1"></div>
 
 <div id="extra-box" class="extra-box" style="display: none;">
     <p>
-        Kreuzfahrtschiffe verursachen hauptsächlich <b>Schwefeldioxid</b>, <b>Stickoxide</b>, <b>Feinstaub</b> und <b>Kohlendioxid</b>.
-        Das liegt begründet in der Zusammensetzung des Kraftstoffes. Da PKW andere Kraftstoffzusammensetzungen nutzen, stoßen diese weniger Schwefeldioxid, Stickoxide und Feinstaub aber höhere Mengen an Kohlendioxid aus. Aber auch da sind Kreuzfahrtschiffe überlegen.
+Ein Kreuzfahrschiff stößt in 24 Stunden etwa so viel Schwefeldioxid aus, wie <b> 375 Millionen PKW </b> in derselben Zeit. PKW-Kraftstoffe enthalten deutlich <b> weniger Schwefel </b>, weshalb ihr Schwefeldioxid-Ausstoß im Vergleich verschwindend gering ist. 
     </p>
 </div>
 
 <style>
     :global(body) {
-        background-color: #efe0cd; /* Beige background */
-        margin: 0; /* Remove default body margin */
-        color: #427fb7; /* Blue text */
+        background-color: #efe0cd; 
+        margin: 0; 
+        color: #427fb7; 
         font-size: 18px;
         font-family: PT Serif;
     }
-    
+
     div {
-        
         padding: 10px;
     }
 
@@ -85,7 +81,14 @@
 
     .slider {
         margin: 30px;
-        color: #427fb7; /* Blue text on slider */
+        color: #427fb7;
+        text-align: center;
+    }
+
+    input[type="range"] {
+        width: 50%; 
+        display: block; 
+        margin: 10px auto; 
     }
 
     .result-box-1 {
@@ -97,7 +100,7 @@
 
     .extra-box {
         font-size: 1em;
-        color: #427fb7; /* Blue text */
+        color: #427fb7; 
         text-align: justify;
         background-color: #e9ffe9;
         border-radius: 10px;
@@ -105,14 +108,10 @@
         margin: 20px 30px;
     }
 
-    input[type="range"] {
-        margin-top: 10px;
-        width: 100%;
-    }
-
     .pictograms {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center; 
     }
 
     .pictograms img {
